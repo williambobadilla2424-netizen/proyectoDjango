@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container justify-content-center">
+    {{error}}
+    <div class="container mt-5">
+        <div class="offset-3">
+            <form method="POST" action='{% url "crearTarea" %}'>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="" class="form-label">Titulo</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="titulo"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder="xxxxxxx@gmail.com"
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label"></label>
+                    <textarea class="form-control" 
+                    name="" 
+                    id="descripcion" 
+                    rows="3"
+                    placeholder="Descripcion de la tarea"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Name</label>
+                    <input
+                        type="date"
+                        class="form-control"
+                        name=""
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder=""
+                    />
+                    <div class="container">
+                        <input
+                        class = "btn btn-success"
+                        type="submit"
+                        value="Enviar"
+                        />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
